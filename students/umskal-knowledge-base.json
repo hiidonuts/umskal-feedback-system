@@ -1,0 +1,155 @@
+{
+  "university": {
+    "name": "UMSKAL",
+    "full_name": "Universiti Malaysia Sabah Kampus Antarabangsa Labuan",
+    "location": "Labuan, Malaysia",
+    "website": "https://ums.edu.my/v5/en/general/2010-umskal",
+    "founded": 1999,
+    "faculties": "FKI (Fakulti Komputeran dan Informatik), FKAL (Fakulti Kewangan Antarabangsa Labuan)",
+    "description": "UMSKAL is a public research university offering undergraduate and postgraduate programs in information technology, and finance."
+  },
+  "courses": {
+    "fki": ["Business Computing", "Multimedia Technology"],
+    "fkal": ["International Marketing", "International Finance", "International and Offshore Banking", "Financial Economics", "Islamic Finance"],
+    "fkal_website": "https://www.ums.edu.my/fkal/index.php/what-we-offer/undergraduate",
+    "fki_website": "https://fki.ums.edu.my/"
+  },
+  "feedback_system": {
+    "purpose": "Allow students to voice opinions and suggestions to help improve the university",
+    "how_to_submit": "Click the 'Submit Feedback' button on the feedback system page and type out your comments and suggestions",
+    "feedback_types": ["Campus Facilities", "Academic Services", "Student Support", "General Inquiries", "Suggestions for Improvement"],
+    "response_time": "Feedback is reviewed and responded to within working hours",
+    "confidentiality": "Your feedback can be submitted anonymously if preferred"
+  },
+  "campus_facilities": {
+    "lecture_halls": {
+      "description": "Modern, well-equipped lecture halls with multimedia facilities",
+      "features": ["Projector", "Audio systems", "WiFi access", "Imago (Smart Present Application)"]
+    },
+    "library": {
+      "name": "UMSKAL Main Library",
+      "description": "Comprehensive library with physical and digital resources",
+      "hours": "Monday-Friday: 8:00 AM - 10:00 PM, Saturday-Sunday: 10:00 AM - 6:00 PM",
+      "services": ["Book borrowing", "Study spaces", "Computer terminals", "Digital resources access", "Reference assistance"],
+      "contact": "+60 82-583450 Ext. 1500"
+    },
+    "sports_facilities": {
+      "description": "Modern sports and recreation facilities",
+      "facilities": ["Indoor gymnasium", "Badminton courts", "Basketball court", "Volleyball court", "Football field" ]
+    },
+    "student_center": {
+      "description": "Hub for student activities and welfare",
+      "services": ["Student clubs and societies", "Recreation area", "Food court", "Event spaces"]
+    },
+    "cafeteria": {
+      "description": "Multiple food outlets serving diverse cuisines",
+      "options": ["Halal food", "Vegetarian options", "Local cuisine"]
+    },
+    "health_clinic": {
+      "name": "UMSKAL Health Clinic",
+      "description": "Medical services for students and staff",
+      "services": ["General medical consultation", "Pharmacy", "Health screening", "Mental health counseling"],
+      "hours": "Monday-Friday: 8:00 AM - 5:00 PM",
+      "contact": "+60 82-583450 Ext. 1400"
+    }
+  },
+  "clubs": {
+    "organisations": {
+      "description": "Student leadership and welfare organizations representing student interests and providing support to the student community. These bodies facilitate student governance, welfare initiatives, and faculty-specific activities.",
+      "name": ["Majlis Perwakilan Pelajar (MPP)", "Jawatankuasa Kebajikan Mahasiswa/i (JAKMAS)", "Persatuan Mahasiswa FKAL (PMFKAL)", "Persatuan Mahasiswa FKI (PMFKI)"]
+    },
+    "sports_clubs": {
+      "description": "Clubs focused on sports and recreational activities including volleyball, netball, traditional games, fitness, and esports. These clubs promote physical wellness, teamwork, and competitive spirit among students.",
+      "name": ["Labuan International Campus Volleyball Club (LICVC)", "Netball Club", "Boule Club", "Gymnasium Club", "UMSLIC Esports Club"]
+    },
+    "social_clubs": {
+      "description": "Clubs dedicated to social causes, community service, peer support, and personal development. These include volunteer work, mentorship programs, language learning, and fostering harmony among students.",
+      "name": ["Rotaract Club (RACUMSKAL)", "Pembimbing Rakan Siswa (PRS)", "Kelab Sukarelawan Siswa (Kesuwa-kal)", "Kelab Bahasa Xclusive", "Kelab Mahasiswa Harmoni", "Leo Club"]
+    },
+    "culture_club": {
+      "description": "Clubs celebrating cultural heritage, performing arts, and traditional practices. These clubs promote cultural appreciation, artistic expression, and traditional skills such as martial arts and music.",
+      "name": ["Kelab Kesenian & Kebudayaan", "Kelab Silat", "Kelab Muzikal"]
+    },
+    "religious_club": {
+      "name": ["Kelab Sahabat Masjid Al-Hikmah", "Catholic Student Group (CSGKAL)"],
+      "description": "Faith-based clubs providing spiritual support and religious community for students of different beliefs. These clubs organize religious activities, discussions, and provide a welcoming community for members."
+    },
+    "council_member": {
+      "description": "Stand a chance to contribute as a High Council or Executive Council (MTME) in any clubs to train leadership and communication skills.",
+      "requirements": [">3.0 CGPA", "Committed to council obligations", "No disciplinary action in student record"],
+      "selection_process": "Through interview and filtering by High Councils."
+    }
+  },
+  "student_services": {
+    "academic_support": {
+      "description": "Support for academic success",
+      "services": ["Tutoring programs", "Study groups", "Academic advising", "Writing center", "Course materials"],
+      "contact": "Academic Affairs Office"
+    },
+    "it_support": {
+      "description": "Technology and computing resources",
+      "services": ["Technical support", "WiFi troubleshooting", "Software access", "Computer lab access", "Email and account support"],
+      "hours": "Monday-Friday: 8:00 AM - 5:00 PM",
+      "contact": "IT Help Desk: helpdesk@umskal.my or +60 82-583450 Ext. 1600"
+    },
+    "student_welfare": {
+      "description": "Support for student wellbeing and development",
+      "services": ["Counseling", "Financial aid", "Scholarships", "Housing assistance", "Career guidance"],
+      "contact": "Student Affairs Office"
+    },
+    "career_services": {
+      "description": "Career development and employment support",
+      "services": ["Resume writing", "Interview preparation", "Job placement assistance", "Alumni network", "Internship opportunities"],
+      "contact": "Career Development Center"
+    }
+  },
+  "academic_policies": {
+    "admission": {
+      "requirements": "SPM/A-Level results or international equivalent, minimum CGPA/grades",
+      "application_process": "Apply online via UMSKAL website or MARA portal",
+      "intake": "Intake 1 (February) and Intake 2 (September)"
+    },
+    "grading_system": {
+      "scale": "GPA 0.0 - 4.0",
+      "passing_grade": "D (1.0)",
+      "description": "A (4.0), A- (3.7), B+ (3.3), B (3.0), B- (2.7), C+ (2.3), C (2.0), D (1.0), F (0.0)"
+    },
+    "attendance": {
+      "requirement": "Minimum 80% attendance required for each course",
+      "exceptions": "Medical certificates and approved absences may be considered"
+    },
+    "academic_standing": {
+      "good_standing": "CGPA >= 2.0",
+      "probation": "CGPA < 2.0 triggers academic probation",
+      "dismissal": "Repeated failure to meet minimum standards may result in academic dismissal"
+    }
+  },
+  "contact_information": {
+    "main_office": {
+      "address": "Universiti Malaysia Sabah Kampus Antarabangsa Labuan",
+      "phone": "+60 82-583000",
+      "fax": "+60 82-583999",
+      "email": "enquiry@umskal.my"
+    },
+    "student_portal": "https://portal.umskal.my",
+    "important_offices": {
+      "registrar": "Registrar's Office - Academic records and enrollment",
+      "student_affairs": "Student Affairs Office - Student welfare and development",
+      "finance": "Finance Office (Level 3 Menara)- Fees, payments, and financial matters",
+      "fki": "FKI Office (Level 5 Menara)"
+    }
+  },
+  "frequently_asked_topics": {
+    "how_to_submit_feedback": "Use the feedback form on the feedback system page",
+    "who_reads_feedback": "Student affairs office and relevant departments review feedback",
+    "what_happens_to_feedback": "Feedback is analyzed and used to improve university services and facilities",
+    "can_feedback_be_anonymous": "Yes, you can submit anonymous feedback",
+    "library_hours": "Mon-Fri 8AM-10PM, Sat-Sun 10AM-6PM",
+    "it_support_hours": "Mon-Fri 8AM-5PM",
+    "health_clinic_hours": "Mon-Fri 8AM-5PM",
+    "tuition_fees": "Contact Finance Office for current fee structure",
+    "scholarship_information": "Visit Student Affairs Office or check website for available scholarships",
+    "housing_on_campus": "Limited on-campus housing available; apply through Student Affairs",
+    "internship_opportunities": "Contact Career Development Center for internship placements"
+  }
+}

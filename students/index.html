@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMSKAL Student Feedback System</title>
+    <link rel="icon" type="image/x-icon" href="../img/ums_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot-enhancements.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="../img/ums_logo2.png" alt="UMSKAL Logo" height="50">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="#cta" class="nav-link">Feedback</a></li>
+                 <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="separator">/</span>
+                    <span class="lang-option" data-lang="bm">BM</span>
+                </button>
+
+                <div id="userArea" class="user-area">
+                    <button id="loginBtn" class="login-btn">Login</button>
+
+                    <div id="profileView" class="profile-view" style="display:none;">
+                        <div class="profile-btn-wrapper">
+                            <button id="profileBtn" class="profile-btn" aria-haspopup="true" aria-expanded="false">
+                                <div class="profile-pic-container">
+                                    <img id="profilePic" class="profile-pic" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23d0d0d0'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23a0a0a0'/%3E%3Cellipse cx='50' cy='70' rx='20' ry='18' fill='%23a0a0a0'/%3E%3C/svg%3E" alt="Profile">
+                                </div>
+                                <div class="profile-name-container">
+                                    <span id="profileName" class="profile-name"></span>
+                                </div>
+                            </button>
+
+                            <button id="logoutBtnNavbar" class="logout-btn-navbar" title="Logout">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-slider" id="home">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="../img/umskal-main.jpg" alt="Campus Building">
+                <div class="slide-content">
+                    <h1 data-en="Shaping the Future of Education" data-bm="Membentuk Masa Depan Pendidikan">Shaping the Future of Education</h1>
+                    <p data-en="Where Excellence Meets Innovation" data-bm="Di Mana Kecemerlangan Bertemu Inovasi">Where Excellence Meets Innovation</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../img/hero1.jpg" alt="">
+                <div class="slide-content">
+                    <h1 data-en="A Legacy of Excellence" data-bm="Warisan Kecemerlangan">A Legacy of Excellence</h1>
+                    <p data-en="Discover Our Rich Heritage and Modern Vision" data-bm="Temui Warisan Kaya dan Visi Moden Kami">Discover Our Rich Heritage and Modern Vision</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../img/beach-1.jpg" alt="">
+                <div class="slide-content">
+                    <h1 data-en="Your Voice Matters" data-bm="Suara Anda Penting">Your Voice Matters</h1>
+                    <p data-en="Shaping Tomorrow Through Feedback Today" data-bm="Membentuk Masa Depan Melalui Maklum Balas Hari Ini">Shaping Tomorrow Through Feedback Today</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-btn next" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="glass-card about-card">
+                <h2 data-en="About Our System" data-bm="Tentang Sistem Kami">About Our System</h2>
+                <p data-en="UMSKAL's Student Feedback & Suggestions System is a modern, AI-powered platform designed to give students a voice in shaping their educational experience. We believe that every opinion matters, and through this innovative system, we make it easier than ever to share your thoughts, concerns, and ideas with the university administration."
+                   data-bm="Sistem Maklum Balas & Cadangan Pelajar UMSKAL adalah platform moden berkuasa AI yang direka untuk memberi pelajar suara dalam membentuk pengalaman pendidikan mereka. Kami percaya bahawa setiap pendapat penting, dan melalui sistem inovatif ini, kami memudahkan untuk berkongsi pemikiran, kebimbangan, dan idea anda dengan pentadbiran universiti.">
+                   UMSKAL's Student Feedback & Suggestions System is a modern, AI-powered platform designed to give students a voice in shaping their educational experience. We believe that every opinion matters, and through this innovative system, we make it easier than ever to share your thoughts, concerns, and ideas with the university administration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities-section" id="facilities">
+        <div class="container">
+
+            <div class="facility-slider" id="facilitySlider" aria-roledescription="carousel">
+                <div class="facility-panels">
+                    <article class="facility-panel active" data-index="0">
+                        <div class="facility-card">
+                            <div class="facility-media">
+                                <img src="../img/menara.jpg" alt="Lecture Halls">
+                            </div>
+                            <div class="facility-info">
+                                <small class="subhead" data-en="Our Facilities" data-bm="Kemudahan Kami">Our Facilities</small>
+                                <p class="facilities-intro" data-en="Exceptional Facilities Designed to<br> Support Learning, Research, and<br> Discovery" data-bm="Terokai kemudahan kampus UMSKAL: ruang pembelajaran moden, makmal, perpustakaan dan perkhidmatan pelajar yang direka untuk menyokong kejayaan anda.">Exceptional Facilities Designed to<br> Support Learning, Research, and<br> Discovery</p>
+                                <h4 class="facility-title">Menara</h4>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="facility-panel" data-index="2">
+                        <div class="facility-card">
+                            <div class="facility-media">
+                                <img src="../img/library.jpg" alt="Library">
+                            </div>
+                            <div class="facility-info">
+                                <h4 class="facility-title">Library & Resources</h4>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="facility-panel" data-index="3">
+                        <div class="facility-card">
+                            <div class="facility-media">
+                                <img src="../img/beach-1.jpg" alt="Gym Room">
+                            </div>
+                            <div class="facility-info">
+                                <h4 class="facility-title">Gym Room</h4>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="facility-panel" data-index="5">
+                        <div class="facility-card">
+                            <div class="facility-media">
+                                <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Cafeteria">
+                            </div>
+                            <div class="facility-info">
+                                <h4 class="facility-title">Cafeteria</h4>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="facility-panel" data-index="7">
+                        <div class="facility-card">
+                            <div class="facility-media">
+                                <img src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Health Clinic">
+                            </div>
+                            <div class="facility-info">
+                                <h4 class="facility-title">Health Clinic</h4>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="stats-section" id="stats">
+        <div class="container">
+            <h2 class="section-title" data-en="Quick Statistics" data-bm="Statistik Pantas">Quick Statistics</h2>
+            <div class="stats-grid">
+                <div class="glass-card stat-card">
+                    <div class="stat-number" id="totalSubmissions">1,247</div>
+                    <div class="stat-label" data-en="Total Submissions" data-bm="Jumlah Penyerahan">Total Submissions</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-number" id="avgResponseTime">24h</div>
+                    <div class="stat-label" data-en="Avg Response Time" data-bm="Masa Tindak Balas Purata">Avg Response Time</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-number" id="issuesResolved">1,089</div>
+                    <div class="stat-label" data-en="Issues Resolved" data-bm="Isu Diselesaikan">Issues Resolved</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-number" id="satisfaction">96.5%</div>
+                    <div class="stat-label" data-en="Student Satisfaction" data-bm="Kepuasan Pelajar">Student Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Ready to Make UMSKAL Better?" data-bm="Bersedia untuk Menjadikan UMSKAL Lebih Baik?">Ready to Make UMSKAL Better?</h2>
+                <p data-en="Your voice matters. Share your feedback and help shape our campus."
+                   data-bm="Suara anda penting. Kongsi maklum balas anda dan bantu bentuk kampus kami.">
+                   Your voice matters. Share your feedback and help shape our campus.
+                </p>
+                <div class="cta-buttons">
+                    <button class="cta-btn primary" onclick="openChatbotFeedback()" data-en="Submit Feedback" data-bm="Hantar Maklum Balas">Submit Feedback</button>
+                    <button class="cta-btn secondary" onclick="openChatbot()" data-en="Ask the AI Assistant" data-bm="Tanya Pembantu AI">Ask the AI Assistant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2 data-en="Frequently Asked Questions" data-bm="Soalan Lazim">Frequently Asked Questions</h2>
+                <p data-en="Can't find the answer? Ask our AI assistant or submit your question." data-bm="Tidak jumpa jawapan? Tanya pembantu AI kami atau hantar soalan anda.">
+                    Can't find the answer? Ask our AI assistant or submit your question.
+                </p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-filters">
+                    <button class="faq-filter-btn active" data-category="all" data-en="All" data-bm="Semua">All</button>
+                    <button class="faq-filter-btn" data-category="academic" data-en="Academic" data-bm="Akademik">Academic</button>
+                    <button class="faq-filter-btn" data-category="technical" data-en="Technical" data-bm="Teknikal">Technical</button>
+                    <button class="faq-filter-btn" data-category="account" data-en="Account" data-bm="Akaun">Account</button>
+                    <button class="faq-filter-btn" data-category="other" data-en="Other" data-bm="Lain-lain">Other</button>
+                </div>
+
+                <div class="faq-list" id="faqList">
+                    <div class="faq-loading" id="faqLoading">
+                        <p data-en="Loading FAQs..." data-bm="Memuatkan soalan lazim...">Loading FAQs...</p>
+                    </div>
+                </div>
+
+                <div class="faq-no-results" id="faqNoResults" style="display: none;">
+                    <p data-en="No FAQs found in this category. Try another filter." data-bm="Tidak ada soalan lazim dalam kategori ini. Cuba penapis lain.">
+                        No FAQs found in this category. Try another filter.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-en="Contact Us" data-bm="Hubungi Kami">Contact Us</h3>
+                    <p data-en="Email: feedback@umskal.edu.my" data-bm="Emel: feedback@umskal.edu.my">Email: feedback@umskal.edu.my</p>
+                    <p data-en="Phone: +(60) 87-503 000" data-bm="Telefon: +(60) 87-503 000">Phone: +(60) 87-503 000</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Quick Links" data-bm="Pautan Pantas">Quick Links</h3>
+                    <ul>
+                        <li><a href="https://itel.ums.edu.my/" data-en="iTEL" data-bm="iTEL">iTEL</a></li>
+                        <li><a href="https://smp.ums.edu.my/" data-en="SMPB" data-bm="SMPB">SMPB</a></li>
+                        <li><a href="https://jadual.ums.edu.my/KuliahLB/" data-en="Timetable" data-bm="Jadual Kuliah">Timetable Finder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-en="Follow Us" data-bm="Ikuti Kami">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/UMSKAL.official/" aria-label="Facebook" target=_blank>Facebook</a>
+                        <a href="https://www.instagram.com/umskal.official/" aria-label="Instagram" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2025 UMSKAL Feedback System. All rights reserved." data-bm="© 2025 UMSKAL Feedback System. Hak cipta terpelihara.">&copy; 2025 UMSKAL Feedback System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chatbot-widget" id="chatbot">
+        <div class="chatbot-closed" id="chatbotClosed">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="notification-badge" id="notificationBadge" style="display: none;">1</span>
+        </div>
+        <div class="chatbot-open" id="chatbotOpen" style="display: none;">
+            <div class="chatbot-sidebar" id="chatbotSidebar">
+                <div class="sidebar-header">
+                    <button class="sidebar-submit-feedback" id="sidebarSubmitFeedback" title="Submit Feedback">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span data-en="Submit Feedback" data-bm="Hantar Maklum Balas">Submit Feedback</span>
+                    </button>
+                    <div style="flex: 1;"></div>
+                    <h4 data-en="Chat History" data-bm="Sejarah Sembang">Chat History</h4>
+                    <button class="sidebar-close" id="closeSidebar" aria-label="Close sidebar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="sidebar-sessions" id="sidebarSessions">
+                    <div class="session-item active" data-session="current">
+                        <div class="session-time">Today</div>
+                        <div class="session-preview">New conversation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-container">
+                <div class="chat-section" id="mainChatSection">
+                    <div class="chatbot-header">
+                        <h3 data-en="Aiva" data-bm="Aiva">Aiva</h3>
+                        <button class="chat-back-btn" id="chatBackBtn" style="display: none;" aria-label="Back">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <div class="chatbot-controls">
+                            <button class="new-chat-btn" id="newChatBtn" title="Start new chat" data-tooltip="New Chat" aria-label="Start new chat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="chatbot-fullscreen" id="toggleFullscreen" aria-label="Enter fullscreen" aria-pressed="false" title="Expand chat" data-tooltip="Fullscreen Mode">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+                                    <path d="M16 3h3a2 2 0 0 1 2 2v3" />
+                                    <path d="M8 21H5a2 2 0 0 1-2-2v-3" />
+                                    <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+                                </svg>
+                            </button>
+                            <button class="chatbot-minimize" id="minimizeChat" aria-label="Minimize" data-tooltip="Minimize">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="chatbot-close" id="closeChat" aria-label="Close" data-tooltip="Close Chat">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chatbot-messages" id="chatbotMessages">
+                        <div class="message bot-message">
+                            <p data-en="Hello! I'm Aiva. I'll help you with any questions about UMSKAL's feedback system. How can I assist you today?"
+                               data-bm="Helo! Saya Aiva. Saya akan membantu anda dengan sebarang soalan tentang sistem maklum balas UMSKAL. Bagaimana saya boleh membantu anda hari ini?">
+                               Hello! I'm Aiva. I'll help you with any questions about UMSKAL. How can I assist you today?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" id="chatInput" placeholder="Type your message..." data-en-placeholder="Type your message..." data-bm-placeholder="Taip mesej anda...">
+                        <button id="sendMessage" aria-label="Send">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                        <div id="cooldownNotice" class="cooldown-notice" style="display:none;" aria-live="polite">Cooldown is enabled (<span id="cooldownSeconds">30</span>s)</div>
+                    </div>
+                </div>
+
+                <div class="chat-section" id="feedbackSection" style="display: none;">
+                    <div class="chatbot-header">
+                        <button class="chat-back-btn" id="feedbackBackBtn" aria-label="Back to chat">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </button>
+                        <h3 data-en="Submit Feedback" data-bm="Hantar Maklum Balas">Submit Feedback</h3>
+                        <div class="chatbot-controls">
+                            <button class="new-chat-btn" id="newChatBtn2" title="Start new chat" data-tooltip="New Chat" aria-label="Start new chat">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="chatbot-fullscreen" id="toggleFullscreen2" aria-label="Enter fullscreen" aria-pressed="false" title="Expand chat" data-tooltip="Fullscreen Mode">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+                                    <path d="M16 3h3a2 2 0 0 1 2 2v3" />
+                                    <path d="M8 21H5a2 2 0 0 1-2-2v-3" />
+                                    <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+                                </svg>
+                            </button>
+                            <button class="chatbot-minimize" id="minimizeChat2" aria-label="Minimize" data-tooltip="Minimize">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <button class="chatbot-close" id="closeChat2" aria-label="Close" data-tooltip="Close Chat">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chatbot-messages" id="feedbackMessages">
+                        <div class="message bot-message">
+                            <p data-en="Please select a feedback category to get started."
+                               data-bm="Sila pilih kategori maklum balas untuk bermula.">
+                               Please select a feedback category to get started.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" id="feedbackInput" placeholder="Type your message..." data-en-placeholder="Type your message..." data-bm-placeholder="Taip mesej anda...">
+                        <button id="sendFeedback" aria-label="Send feedback">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="feedbackModal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <h2 data-en="Submit Your Feedback" data-bm="Hantar Maklum Balas Anda">Submit Your Feedback</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="studentName" data-en="Name" data-bm="Nama">Name</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentId" data-en="Student ID (Optional)" data-bm="ID Pelajar (Pilihan)">Student ID (Optional)</label>
+                    <input type="text" id="studentId" name="studentId">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-en="Email" data-bm="Emel">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="category" data-en="Category" data-bm="Kategori">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="" data-en="Select a category" data-bm="Pilih kategori">Select a category</option>
+                        <option value="facilities" data-en="Facilities" data-bm="Kemudahan">Facilities</option>
+                        <option value="academics" data-en="Academics" data-bm="Akademik">Academics</option>
+                        <option value="administration" data-en="Administration" data-bm="Pentadbiran">Administration</option>
+                        <option value="services" data-en="Services" data-bm="Perkhidmatan">Services</option>
+                        <option value="other" data-en="Other" data-bm="Lain-lain">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-en="Your Feedback" data-bm="Maklum Balas Anda">Your Feedback</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-en="Submit Feedback" data-bm="Hantar Maklum Balas">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="profile-sidebar" id="profileSidebar">
+        <div class="profile-sidebar-content">
+            <div class="profile-sidebar-header">
+                <button class="close-sidebar-btn" id="closeSidebarBtn" aria-label="Close sidebar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="profile-main-section">
+                <div class="sidebar-profile-pic-container">
+                    <img id="sidebarProfilePic" class="sidebar-profile-pic" src="" alt="Profile Picture">
+                    <button class="edit-pic-btn" id="editPicBtn" title="Change profile picture">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                    </button>
+                    <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="sidebar-display-name-container" id="displayNameEditContainer">
+                    <h3 id="sidebarDisplayName" class="sidebar-display-name" contenteditable="true" role="textbox" tabindex="0" aria-label="Edit display name"></h3>
+                    <span class="edit-hint">(Click to edit)</span>
+                </div>
+            </div>
+
+            <div class="profile-sections">
+                <div class="profile-section">
+                    <button class="section-toggle" data-section="profileInfo">
+                        <span class="section-title">Profile Information</span>
+                        <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="profileInfoContent" style="display: none;">
+                        <div class="profile-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Full Name</span>
+                                <p id="fullNameValue" class="info-value"></p>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status</span>
+                                <p id="statusValue" class="info-value"></p>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Registered</span>
+                                <p id="registerTimeValue" class="info-value"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <button class="section-toggle" data-section="feedback">
+                        <span class="section-title">My Feedback</span>
+                        <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="feedbackContent" style="display: none;">
+                        <div id="feedbackList" class="feedback-list"></div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <button class="section-toggle" data-section="resolvedFeedback">
+                        <span class="section-title">
+                            Resolved Feedback 
+                            <span id="resolvedBadge" class="badge" style="display: none;"></span>
+                        </span>
+                        <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="resolvedFeedbackContent" style="display: none;">
+                        <div id="resolvedFeedbackList" class="feedback-list">
+                            <p style="text-align: center; color: #999;">Loading resolved feedback...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="app.js"></script>
+    <script src="faq-manager.js"></script>
+</body>
+</html>
